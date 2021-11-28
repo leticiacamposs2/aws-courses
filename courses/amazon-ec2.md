@@ -62,9 +62,6 @@ Com o Amazon Elastic Block Store (EBS), você paga somente pelo que provisiona. 
 
 É importante saber sobre a precificação do disco também para não cair no erro: Eu tenho uma máquina que está rodando, gastando recurso computacional e dicido parar a máquina. Mesmo que a máquina não esteja mais bilhetando e nem usando algum recurso é errado achar que não terá nenhum gasto mensal, visto que mesmo com máquina parada, existe um disco associado a ela. Está aqui: Elastic Block Store são os discos.
 
-### Links:
-- [Portal AWS](https://aws.amazon.com/)
-- [Preços das instâncias EC2](https://aws.amazon.com/pt/ec2/pricing/on-demand/)
-- [Regiões e zonas de disponibilidade](https://aws.amazon.com/pt/about-aws/global-infrastructure/regions_az/)
-- [Preço do Amazon EBS](https://aws.amazon.com/pt/ebs/pricing/)
-- [Calculadora de preços da AWS](https://calculator.aws/#/)
+## Customizando a instância
+
+Você pergunta assim: “Será que dá para eu lançar uma máquina EC2 já pré-customizada, ou seja, um template. Como é que eu faço isso?” Quando nós vamos aqui em lançar instância. Além daqueles modelos que eu te mostrei no início, existem já aqui, AWS marketplace, já existem algumas imagens pré-definidas.
