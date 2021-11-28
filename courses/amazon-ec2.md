@@ -65,3 +65,9 @@ Com o Amazon Elastic Block Store (EBS), você paga somente pelo que provisiona. 
 ## Customizando a instância
 
 Você pergunta assim: “Será que dá para eu lançar uma máquina EC2 já pré-customizada, ou seja, um template. Como é que eu faço isso?” Quando nós vamos aqui em lançar instância. Além daqueles modelos que eu te mostrei no início, existem já aqui, AWS marketplace, já existem algumas imagens pré-definidas.
+
+Caso queira fazer na mão, ao criar a instância na etapa 3 de configuração na aba Detalhes Avançados > Dados usuário
+
+Basta informar os comandos de instalação que deverá ser executado, nesse caso o ideal é criar um script.sh e depois colar os comandos 
+
+![image](https://user-images.githubusercontent.com/34458509/143726258-cb399a66-ca2e-4eb8-ab98-0b7e7d9d5294.png)
