@@ -24,6 +24,47 @@ Como a parte de autenticação, é feita via SSH, ou seja através de chaves a A
 
 Feito isso, a máquina será PROVISIONADA ou seja, estara em processo de criar a máquina virtual e deixar ela no ar.
 
-Links:
+## Mapa de regiões da AWS
+
+![image](https://user-images.githubusercontent.com/34458509/143723831-444af5a1-afaa-469a-b33a-5531f4189352.png)
+
+Cada região dessa são data centers e dentro dessas regiões, zonas de disponibilidade.
+
+![image](https://user-images.githubusercontent.com/34458509/143723888-9c9c9900-00a1-4b25-a7be-2d3109108625.png)
+
+Em SP temos 3 zonas de disponibilidades, assim como em Ohio
+
+![image](https://user-images.githubusercontent.com/34458509/143723938-7c748019-223c-4769-88ac-7f41ce57a94a.png)
+
+Outro recurso interessante, é clicar na instance > instance settings > Change termination protection ao ativar essa proteção você evita que a sua instancia seja terminada
+
+## Comunicação entre as máquinas
+
+As máquinas são criadas dentro de uma mesma sub-rede. Como é que fica a comunicação entre elas? Ao pegar o IP da máquina e executar o comando de PING no cmd no caso de falha isso significa que será necessário AUTORIZAR essa comunicação.
+
+Quando você cria uma instância EC2, ela é criada de forma isolada, apesar de ela estar na mesma sub-rede. Para autorizar basta ir no Security Group (instance > action > Networking > Change Security Group) seleciona o acesso group default e assim vou conseguir a comunicação, visto que antes eu permitia a ida mas não a volta, assim eu permito ambas comunicações.
+
+## Acessando a instância
+
+- Selecione a EC2 criada e clique em Connect > SSH Client será exibido os comnados linux para conexão
+- Abra o CMD da máquina local e execute o comando na pasta do projeto
+- Como parar a instancia? Na AWS clique com o direto na instancia > Stop instance
+- Como remover a máquina? Na AWS clique com o direto na instancia > Terminate instance
+
+** O Linux já tem nativo o SSH
+** VPC de forma simples é a minha rede dentro da AWS
+
+## Precificação dos Discos
+
+Na AWS o nome dos discos são EBS, como estamos usando uma instância ela tem um disco anexado a ela, por isso é importante saber qual a precificação do disco! Lembrando que: O nível gratuito inclui 30 GB de armazenamento
+
+Com o Amazon Elastic Block Store (EBS), você paga somente pelo que provisiona. O armazenamento de volume para todos os tipos de volumes do EBS é cobrado pela quantidade provisionada em GB por mês até a liberação do armazenamento. Os custos aumentam para os volumes EBS compatíveis com mais operações de entrada/saída por segundo (IOPS) e taxa de transferência superior à performance da linha de base.
+
+É importante saber sobre a precificação do disco também para não cair no erro: Eu tenho uma máquina que está rodando, gastando recurso computacional e dicido parar a máquina. Mesmo que a máquina não esteja mais bilhetando e nem usando algum recurso é errado achar que não terá nenhum gasto mensal, visto que mesmo com máquina parada, existe um disco associado a ela. Está aqui: Elastic Block Store são os discos.
+
+### Links:
 - [Portal AWS](https://aws.amazon.com/)
 - [Preços das instâncias EC2](https://aws.amazon.com/pt/ec2/pricing/on-demand/)
+- [Regiões e zonas de disponibilidade](https://aws.amazon.com/pt/about-aws/global-infrastructure/regions_az/)
+- [Preço do Amazon EBS](https://aws.amazon.com/pt/ebs/pricing/)
+- [Calculadora de preços da AWS](https://calculator.aws/#/)
